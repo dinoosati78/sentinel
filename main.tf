@@ -17,25 +17,61 @@
 # in backend.tf.
 
 
-resource "fakewebservices_vpc" "primary_vpc" {
-  name       = "Primary VPC"
-  cidr_block = "0.0.0.0/1"
+# resource "fakewebservices_vpc" "primary_vpc" {
+#   name       = "Primary VPC"
+#   cidr_block = "0.0.0.0/1"
+# }
+
+# resource "fakewebservices_server" "servers" {
+#   count = 2
+
+#   name = "Server ${count.index + 1}"
+#   type = "t2.micro"
+#   vpc  = fakewebservices_vpc.primary_vpc.name
+# }
+
+# resource "fakewebservices_load_balancer" "primary_lb" {
+#   name    = "Primary Load Balancer"
+#   servers = fakewebservices_server.servers[*].name
+# }
+
+# resource "fakewebservices_database" "prod_db" {
+#   name = "Production DB"
+#   size = 256
+# }
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
 }
 
-resource "fakewebservices_server" "servers" {
-  count = 2
-
-  name = "Server ${count.index + 1}"
-  type = "t2.micro"
-  vpc  = fakewebservices_vpc.primary_vpc.name
+provider "aws" {
+  region  = "us-west-2"
 }
 
-resource "fakewebservices_load_balancer" "primary_lb" {
-  name    = "Primary Load Balancer"
-  servers = fakewebservices_server.servers[*].name
-}
+resource "aws_iam_policy" "policy" {
+  name        = "test_policy"
+  path        = "/"
+  description = "My test policy"
 
-resource "fakewebservices_database" "prod_db" {
-  name = "Production DB"
-  size = 256
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:Describe*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
 }
