@@ -1,7 +1,4 @@
-module "tfplan-functions" {
-    source = "./common-functions/tfplan-functions/tfplan-functions.sentinel"
-}
-
-module "tfstate-functions" {
-    source = "./common-functions/tfstate-functions/tfstate-functions.sentinel"
+module "functions" {
+  source  = "app.terraform.io/example-org-ed77a3/functions/common"
+  version = "1.0.1"
 }
