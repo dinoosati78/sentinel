@@ -4,5 +4,5 @@ mock "tfplan/v2" {
   }
 }
 module "tfplan-functions" {
-  source = "./tfplan-functions.sentinel"
+  source = "../tfplan-functions.sentinel"
 }
