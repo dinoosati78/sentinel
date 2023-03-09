@@ -1,0 +1,109 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"aws_iam_policy": {
+				"policy": {
+					0: {
+						"applied": {
+							"description": "My test policy",
+							"name":        "test_policy",
+							"name_prefix": null,
+							"path":        "/",
+							"policy":      "{\"Statement\":[{\"Action\":[\"ec2:DescribeFastLaunchImages\",\"kms:GetPublicKey\",\"ec2:DescribeInstances\",\"ec2:GetIpamResourceCidrs\",\"ec2:GetIpamPoolCidrs\",\"ec2:GetEbsEncryptionByDefault\",\"kms:UpdateCustomKeyStore\",\"kms:Encrypt\",\"ec2:DescribeScheduledInstanceAvailability\",\"ec2:GetEbsDefaultKmsKeyId\",\"kms:ReEncryptTo\",\"ec2:DescribeVpcClassicLinkDnsSupport\",\"ec2:DescribeFastSnapshotRestores\",\"kms:DisableKey\",\"kms:VerifyMac\",\"ec2:DescribeVpcEndpointServicePermissions\",\"ec2:GetPasswordData\",\"ec2:GetAssociatedIpv6PoolCidrs\",\"ec2:DescribeScheduledInstances\",\"ec2:GetSpotPlacementScores\",\"kms:EnableKey\",\"kms:ImportKeyMaterial\",\"kms:GenerateRandom\",\"ec2:GetNetworkInsightsAccessScopeAnalysisFindings\",\"kms:Verify\",\"ec2:DescribeVpcEndpointServices\",\"kms:ListResourceTags\",\"ec2:DescribeVpcAttribute\",\"kms:ReplicateKey\",\"kms:GenerateDataKeyPair\",\"ec2:ExportClientVpnClientCertificateRevocationList\",\"kms:GetParametersForImport\",\"kms:GenerateMac\",\"ec2:DescribeAvailabilityZones\",\"kms:UpdatePrimaryRegion\",\"kms:CreateKey\",\"ec2:DescribeVpcEndpointConnections\",\"kms:CreateGrant\",\"ec2:GetIpamPoolAllocations\",\"kms:EnableKeyRotation\",\"kms:GetKeyPolicy\",\"ec2:DescribeVpcEndpointConnectionNotifications\",\"ec2:GetIpamAddressHistory\",\"ec2:DescribeVpcs\",\"kms:ListAliases\",\"ec2:GetManagedPrefixListAssociations\",\"kms:CreateAlias\",\"kms:Decrypt\",\"ec2:GetInstanceUefiData\",\"ec2:ExportClientVpnClientConfiguration\",\"ec2:DescribeVolumesModifications\",\"ec2:GetHostReservationPurchasePreview\",\"kms:CancelKeyDeletion\",\"ec2:GetConsoleScreenshot\",\"kms:DescribeCustomKeyStores\",\"ec2:GetLaunchTemplateData\",\"ec2:GetSerialConsoleAccessStatus\",\"kms:GetKeyRotationStatus\",\"ec2:DescribeAccountAttributes\",\"kms:ConnectCustomKeyStore\",\"ec2:GetManagedPrefixListEntries\",\"kms:ListRetirableGrants\",\"ec2:DescribeVpnConnections\",\"ec2:DescribeVpcPeeringConnections\",\"ec2:GetNetworkInsightsAccessScopeContent\",\"kms:DeleteImportedKeyMaterial\",\"kms:GenerateDataKeyPairWithoutPlaintext\",\"ec2:DescribeVpcEndpointServiceConfigurations\",\"ec2:GetReservedInstancesExchangeQuote\",\"kms:ReEncryptFrom\",\"kms:DisableKeyRotation\",\"ec2:DescribeVpcClassicLink\",\"kms:CreateCustomKeyStore\",\"ec2:GetInstanceTypesFromInstanceRequirements\",\"ec2:DescribeVpcEndpoints\",\"ec2:DescribeElasticGpus\",\"kms:DeleteAlias\",\"ec2:DescribeVpnGateways\",\"ec2:GetResourcePolicy\",\"ec2:GetDefaultCreditSpecification\",\"ec2:GetCapacityReservationUsage\",\"kms:GenerateDataKeyWithoutPlaintext\",\"ec2:GetSubnetCidrReservations\",\"ec2:GetConsoleOutput\",\"kms:SynchronizeMultiRegionKey\",\"kms:DeleteCustomKeyStore\",\"ec2:GetFlowLogsIntegrationTemplate\",\"kms:ScheduleKeyDeletion\",\"kms:DescribeKey\",\"kms:Sign\",\"kms:ListKeyPolicies\",\"kms:UpdateKeyDescription\",\"ec2:DescribeTags\",\"ec2:GetCoipPoolUsage\",\"ec2:GetAssociatedEnclaveCertificateIamRoles\",\"kms:ListGrants\",\"kms:UpdateAlias\",\"kms:ListKeys\",\"kms:GenerateDataKey\",\"kms:DisconnectCustomKeyStore\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}",
+							"tags":        null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "My test policy",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "test_policy",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":[\"ec2:DescribeFastLaunchImages\",\"kms:GetPublicKey\",\"ec2:DescribeInstances\",\"ec2:GetIpamResourceCidrs\",\"ec2:GetIpamPoolCidrs\",\"ec2:GetEbsEncryptionByDefault\",\"kms:UpdateCustomKeyStore\",\"kms:Encrypt\",\"ec2:DescribeScheduledInstanceAvailability\",\"ec2:GetEbsDefaultKmsKeyId\",\"kms:ReEncryptTo\",\"ec2:DescribeVpcClassicLinkDnsSupport\",\"ec2:DescribeFastSnapshotRestores\",\"kms:DisableKey\",\"kms:VerifyMac\",\"ec2:DescribeVpcEndpointServicePermissions\",\"ec2:GetPasswordData\",\"ec2:GetAssociatedIpv6PoolCidrs\",\"ec2:DescribeScheduledInstances\",\"ec2:GetSpotPlacementScores\",\"kms:EnableKey\",\"kms:ImportKeyMaterial\",\"kms:GenerateRandom\",\"ec2:GetNetworkInsightsAccessScopeAnalysisFindings\",\"kms:Verify\",\"ec2:DescribeVpcEndpointServices\",\"kms:ListResourceTags\",\"ec2:DescribeVpcAttribute\",\"kms:ReplicateKey\",\"kms:GenerateDataKeyPair\",\"ec2:ExportClientVpnClientCertificateRevocationList\",\"kms:GetParametersForImport\",\"kms:GenerateMac\",\"ec2:DescribeAvailabilityZones\",\"kms:UpdatePrimaryRegion\",\"kms:CreateKey\",\"ec2:DescribeVpcEndpointConnections\",\"kms:CreateGrant\",\"ec2:GetIpamPoolAllocations\",\"kms:EnableKeyRotation\",\"kms:GetKeyPolicy\",\"ec2:DescribeVpcEndpointConnectionNotifications\",\"ec2:GetIpamAddressHistory\",\"ec2:DescribeVpcs\",\"kms:ListAliases\",\"ec2:GetManagedPrefixListAssociations\",\"kms:CreateAlias\",\"kms:Decrypt\",\"ec2:GetInstanceUefiData\",\"ec2:ExportClientVpnClientConfiguration\",\"ec2:DescribeVolumesModifications\",\"ec2:GetHostReservationPurchasePreview\",\"kms:CancelKeyDeletion\",\"ec2:GetConsoleScreenshot\",\"kms:DescribeCustomKeyStores\",\"ec2:GetLaunchTemplateData\",\"ec2:GetSerialConsoleAccessStatus\",\"kms:GetKeyRotationStatus\",\"ec2:DescribeAccountAttributes\",\"kms:ConnectCustomKeyStore\",\"ec2:GetManagedPrefixListEntries\",\"kms:ListRetirableGrants\",\"ec2:DescribeVpnConnections\",\"ec2:DescribeVpcPeeringConnections\",\"ec2:GetNetworkInsightsAccessScopeContent\",\"kms:DeleteImportedKeyMaterial\",\"kms:GenerateDataKeyPairWithoutPlaintext\",\"ec2:DescribeVpcEndpointServiceConfigurations\",\"ec2:GetReservedInstancesExchangeQuote\",\"kms:ReEncryptFrom\",\"kms:DisableKeyRotation\",\"ec2:DescribeVpcClassicLink\",\"kms:CreateCustomKeyStore\",\"ec2:GetInstanceTypesFromInstanceRequirements\",\"ec2:DescribeVpcEndpoints\",\"ec2:DescribeElasticGpus\",\"kms:DeleteAlias\",\"ec2:DescribeVpnGateways\",\"ec2:GetResourcePolicy\",\"ec2:GetDefaultCreditSpecification\",\"ec2:GetCapacityReservationUsage\",\"kms:GenerateDataKeyWithoutPlaintext\",\"ec2:GetSubnetCidrReservations\",\"ec2:GetConsoleOutput\",\"kms:SynchronizeMultiRegionKey\",\"kms:DeleteCustomKeyStore\",\"ec2:GetFlowLogsIntegrationTemplate\",\"kms:ScheduleKeyDeletion\",\"kms:DescribeKey\",\"kms:Sign\",\"kms:ListKeyPolicies\",\"kms:UpdateKeyDescription\",\"ec2:DescribeTags\",\"ec2:GetCoipPoolUsage\",\"ec2:GetAssociatedEnclaveCertificateIamRoles\",\"kms:ListGrants\",\"kms:UpdateAlias\",\"kms:ListKeys\",\"kms:GenerateDataKey\",\"kms:DisconnectCustomKeyStore\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"policy_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.3.7"
+
+variables = {}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

@@ -1,0 +1,63 @@
+import "strings"
+
+providers = {
+	"aws": {
+		"alias": "",
+		"config": {
+			"region": {
+				"constant_value": "us-west-2",
+			},
+		},
+		"full_name":           "registry.terraform.io/hashicorp/aws",
+		"module_address":      "",
+		"name":                "aws",
+		"provider_config_key": "aws",
+		"version_constraint":  "~> 4.16",
+	},
+}
+
+resources = {
+	"aws_iam_policy.policy": {
+		"address": "aws_iam_policy.policy",
+		"config": {
+			"description": {
+				"constant_value": "My test policy",
+			},
+			"name": {
+				"constant_value": "test_policy",
+			},
+			"path": {
+				"constant_value": "/",
+			},
+			"policy": {
+				"constant_value": null,
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "policy",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_policy",
+	},
+}
+
+provisioners = {}
+
+variables = {}
+
+outputs = {}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}
