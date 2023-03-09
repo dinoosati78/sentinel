@@ -1,3 +1,6 @@
-module "functions" {
-  source  = "app.terraform.io/example-org-ed77a3/functions/common"
+mock "tfplan/v2" {
+  module {
+    source = "./mocks/mock-tfplan-v2.sentinel"
+  }
 }
+
