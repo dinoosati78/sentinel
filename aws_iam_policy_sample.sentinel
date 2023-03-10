@@ -3,7 +3,7 @@
 # import "tfplan/v2" as tfplan
 # import "strings"
 # import "types"
-# import "json"
+import "json"
 import "tfplan-functions" as plan
 # Define a list of administrative actions
 admin_actions = [
