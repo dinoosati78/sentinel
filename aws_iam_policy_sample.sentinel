@@ -17,7 +17,7 @@ admin_actions = [
   "codepipeline:*",
   "codebuild:*",
   "codedeploy:*",
-  "ec2:DescribeFastLaunchImages",
+  #"ec2:DescribeFastLaunchImages",
 ]
 
 
