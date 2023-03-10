@@ -10,5 +10,5 @@ module "tfplan-functions" {
 
 policy "check-aws-iam-access" {
   source = "./aws_iam_policy_sample.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "hard-mandatory"
 }
