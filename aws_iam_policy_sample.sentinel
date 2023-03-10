@@ -1,0 +1,59 @@
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+# import "tfplan/v2" as tfplan
+# import "strings"
+# import "types"
+# import "json"
+import "tfplan-functions" as plan
+# Define a list of administrative actions
+admin_actions = [
+  "iam:*",
+  "elasticbeanstalk:*",
+  "s3:*",
+  "dynamodb:*",
+  "apigateway:*",
+  "lambda:*",
+  "codecommit:*",
+  "codepipeline:*",
+  "codebuild:*",
+  "codedeploy:*",
+  "ec2:DescribeFastLaunchImages",
+]
+
+
+
+# Check if the policy has administrative permissions
+is_admin = false
+
+# find all aws_iam_policy resources
+policy = plan.find_resources("aws_iam_policy")
+for policy as pol, a {
+print(pol, "policy")
+policy_document_string =a.change.after["policy"]
+  
+policy_document = json.unmarshal(policy_document_string)
+  
+print(a.change.after["policy"], "policy_document")
+#for policy_document as address, d {
+
+  # Find the statements of the current policy doc
+  statements = policy_document["Statement"]
+  print(statements, "statements")
+  actions =  plan.filter_attribute_contains_items_from_list(
+                        statements, "Action", admin_actions, false)
+  print(actions["messages"], "actions")
+  
+    
+if length(actions["messages"]) > 0 {
+    is_admin = true
+    break
+}
+    
+#}
+  #if is_admin {
+   # break
+  #}
+}
+main = rule {
+    not is_admin
+}
