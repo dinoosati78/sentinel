@@ -1,9 +1,9 @@
 name: Trivy Scan on Commit
 
 on:
-  push:  # Runs on every commit push
+  push:
     branches:
-      - '**'  # All branches
+      - '**'  # Run on all branches
 
 jobs:
   trivy-repo-scan:
@@ -18,10 +18,10 @@ jobs:
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
 
-      - name: Run Trivy repository scan
-        run: trivy repo --exit-code 1 --severity HIGH,CRITICAL .
+      - name: Run Trivy repository scan and save report
+        run: trivy repo --format json --output trivy-report.json --exit-code 1 --severity HIGH,CRITICAL .
 
-      - name: Upload Trivy report (optional)
+      - name: Upload Trivy report
         if: always()
         uses: actions/upload-artifact@v4
         with:
